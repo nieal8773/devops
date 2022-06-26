@@ -5,12 +5,11 @@ pipeline {
   }
   parameters {
     string(name: 'VERSION', defaultValue: '', description: '')
-	choice(name: 'VERSION', choices: ['1.1', '1.2', '1.3'], description: '')
-	booleanParam(name: 'executeTests', defaultValue: true, description: '')
+    choice(name: 'VERSION', choices: ['1.1', '1.2', '1.3'], description: '')
+    booleanParam(name: 'executeTests', defaultValue: true, description: '')
   }
   environment {
     NEW_VERSION = '1.3.0'
-	SERVER_CREDENTIALS = credentails('CREDENTIALID')
   }
   stages {
     stage("build") {
