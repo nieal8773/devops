@@ -4,7 +4,7 @@ pipeline {
     maven 'maven'
   }
   parameters {
-    string(name: 'VERSION', defaltValue: '', description: '')
+    string(name: 'VERSION', defaultValue: '', description: '')
 	choice(name: 'VERSION', choices: ['1.1', '1.2', '1.3'], description: '')
 	booleanParam(name: 'executeTests', defaultValue: true, description: '')
   }
@@ -32,19 +32,8 @@ pipeline {
     stage("deploy") {
       steps {
         echo 'testing the application'
-        echo "deploying version $params.VERSION"
+        echo "deploying version $params.VERSION"		
       }
-    }
-  }
-  post {
-    always {
-      //
-    }
-    success {
-      //
-    }
-    failure {
-      //
     }
   }
 }
